@@ -10,6 +10,7 @@ public class VirtualButton : MonoBehaviour, IVirtualButtonEventHandler {
     public void OnButtonPressed(VirtualButtonBehaviour vb)
 
     {
+        //el pajaro va a cantar cuando se presione el virtual button (cuando el dedo se ponga encima del boton)
         birdAnim.SetTrigger("sing");
         
     }
@@ -22,6 +23,10 @@ public class VirtualButton : MonoBehaviour, IVirtualButtonEventHandler {
     // Use this for initialization
     void Start () {
 
+        /*
+         *Esto va a hacer que se obtenga el componente VirtualButtonVehaviour y se registre este mismo script como manejador de 
+         * eventos del boton.
+         */
         virtualBtn = GetComponent<VirtualButtonBehaviour>();
         virtualBtn.RegisterEventHandler(this);
 
